@@ -1,0 +1,11 @@
+<h1>Edit <%= @frog.name %></h1>
+  <%= form_for(@frog) do |f| %>
+    <%= f.label :name %>
+      <%= f.text_field :name %><br>
+      <%= f.label :color %>
+      <%= f.text_field :color %><br>
+      <%= f.label :lives %>
+      <%= f.select :pond_id, options_for_select(@ponds.map {|p| [p.name, p.id]}) %>
+      <%= f.submit 'Update' %><br>
+  <% end %>
+<a href="/frogs">Cancel</a>
